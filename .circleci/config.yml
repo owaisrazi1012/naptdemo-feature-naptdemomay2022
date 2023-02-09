@@ -26,9 +26,9 @@ jobs: # a collection of steps
       #    paths:
       #      - ~/.m2
       #    key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
-      -run: echo "PATH = ${PATH}"
+      - run: echo "PATH = ${PATH}"
       
-      -run: echo "M2_HOME = ${M2_HOME}"
+      - run: echo "M2_HOME = ${M2_HOME}"
       
       - run: pwd
       
