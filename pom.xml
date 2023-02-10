@@ -136,16 +136,22 @@
             <groupId>com.napt.api</groupId>
             <artifactId>API_Framework</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/API_Framework.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.napt.Kibana</groupId>
             <artifactId>Kibana</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/Kibana.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.napt.ui</groupId>
             <artifactId>UI_Framework</artifactId>
             <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/UI_Framework.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
