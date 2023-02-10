@@ -36,9 +36,9 @@ jobs: # a collection of steps
          command: |
            cd target && curl -k --location --request POST 'https://qa-tap.mynisum.com:8083/GithubBranchesApp/post-jenkins-actions' --header 'accept: */*' --form 'file=@"cucumber.json"' --form 'attachment=""' --form 'project="cirlcecitest123"' --form 'buildDate="1675862305125"' --form 'buildNumber="1"'
           
-      - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
+     # - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
            #Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-           path: target/surefire-reports
+           #path: target/surefire-reports
 
       - store_artifacts: # store the uberjar as an artifact
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
