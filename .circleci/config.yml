@@ -26,17 +26,8 @@ jobs: # a collection of steps
       #    paths:
       #      - ~/.m2
       #    key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
-      - run: echo "PATH = ${PATH}"
-      
-      - run: echo "M2_HOME = ${M2_HOME}"
-      
-      - run: pwd
-      
-      - run: ls -ltr
-      
-      - run: mvn clean install -U
-
-      - run: mvn clean test -Dfeatures={"features/api/ApiTests.feature:37"} -DtestType="API"
+   
+      - run: mvn clean test -Dcucumber.options=features/api/ApiTests2.feature:37 -Dglue=com.nisum.ebay.steps -DElementWaitTimeoutInSeconds=30 -DdriverPath=http://18.237.164.208:4444/wd/hub -DimplicitWaitSeconds=30 -DtestType=seleniumgrid -Dcap.browserName=chrome -Dfeatures=features/ebay -Dexperience=desktop -DwebURL=https://www.ebay.com -Dcap.platformName=MAC -DexplicitShortWait=10 -DexplicitLongWait=30
 
      #  - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
           # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
