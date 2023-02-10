@@ -34,8 +34,8 @@ jobs: # a collection of steps
       - run:
          name: Posting the data to elastic search
          command: |
-           curl -k --location --request POST 'https://qa-tap.mynisum.com:8083/GithubBranchesApp/post-jenkins-actions/' --header 'cache-control: no-cache' \ --form 'project="cirlcecitest"' \  --form 'buildDate="1675862305125"' \ --form 'buildNumber="'$BUILD_NUMBER'"' \ --form 'file=@"cucumber.json"'''' 
-
+           curl -k --location --request POST 'http://20.106.132.29:8083/GithubBranchesApp/post-jenkins-actions' \--header 'accept: */*' \--form 'file=@"cucumber.json"' \ --form 'attachment=""' \--form 'project="cirlcecitest"' \--form 'buildDate="1675862305125"' \--form 'buildNumber="1"'
+          
       - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
            #Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
            path: target/surefire-reports
