@@ -29,9 +29,6 @@ jobs: # a collection of steps
    
       - run: mvn clean test '-Dcucumber.filter.tags= @s1' -Dcucumber.execution.parallel.config.strategy=fixed -Dcucumber.execution.parallel.enabled=true -Dcucumber.execution.parallel.config.fixed.parallelism=1 -Dcucumber.glue=com.nisum.api -DtestType=api -Dcucumber.features=features/api/ -Dcucumber.plugin=pretty -Dcucumber.plugin=html:target/cucumber.html -Dcucumber.plugin=json:target/cucumber.json
       - run: cd target && ls
-      
-      curl -X 'POST' \
-  'http://20.106.132.29:8083/GithubBranchesApp/post-jenkins-actions' \
  
       - run: curl --location --request POST 'http://20.106.132.29:8083/GithubBranchesApp/post-jenkins-actions'
        -H 'accept: */*' \
