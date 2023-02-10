@@ -31,8 +31,8 @@ jobs: # a collection of steps
       - run: cd target && ls
        
 
-      - run: curl -k --location --request POST 'https://qa-tap.mynisum.com:8083/GithubBranchesApp/post-jenkins-actions/' \
-	
+      - run: curl -k --location --request POST 'https://qa-tap.mynisum.com:8083/GithubBranchesApp/post-jenkins-actions/' 
+
       - store_test_results: # uploads the test metadata from the `target/surefire-reports` directory so that it can show up in the CircleCI dashboard.
            #Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
            path: target/surefire-reports
