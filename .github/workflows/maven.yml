@@ -29,9 +29,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run:  |
-          echo "Check Two"
-          sed -i s/$/qa/ src/main/resources/application.properties 
+      run:  | 
           echo "Check Two"
           mvn clean test '-Dcucumber.filter.tags= @s1' -Dcucumber.execution.parallel.config.strategy=fixed -Dcucumber.execution.parallel.enabled=true -Dcucumber.execution.parallel.config.fixed.parallelism=1 -Dcucumber.glue=com.nisum.api -DtestType=api -Dcucumber.features=features/api/ -Dcucumber.plugin=pretty -Dcucumber.plugin=html:target/cucumber.html -Dcucumber.plugin=json:target/cucumber.json
         
